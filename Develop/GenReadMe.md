@@ -1,75 +1,47 @@
+# ReadMe Generator
+
+## Description
+
+This node.js application will build a professional readMe file using data input on the command line
 
 
-const generateTblofContents = confirmTbl => {
-  if (!confirmTbl) {
-    return '';
-  }
-
-  return `
   ## Table of Contents
 
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
-  `;
-};
+  
 
-const generateInstall = install => {
-  if (!install){
-    return '';
-  }
 
-  return`
   ## Installation
 
-    ${install}`
+    Clone the repository
 
-}
 
-const generateUsage = Usage => {
-  if (!Usage){
-    return '';
-  }
-
-  return`
   ## Usage
 
-  ${Usage}`
+  run node index to start and fill out accordingly
 
-}
 
-const generateCredits = credits => {
-  if (!credits){
-    return '';
-  }
-
-  return`
   ## Credits
 
-  ${credits}`
+  Demonstration
 
-}
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
 
 
 
 
-const generateBadges = confirmBadges => {
-  if (!confirmBadges) {
-    return '';
-  }
-
-  return `
 ## Badges
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)`
-};
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
-const populateContributing = confirmContribute => {
-  if (!confirmContribute) {
-    return '';
-  }
 
-  return `# Contributor Covenant Code of Conduct
+# Contributor Covenant Code of Conduct
 
   ## Our Pledge
   
@@ -197,74 +169,6 @@ const populateContributing = confirmContribute => {
   For answers to common questions about this code of conduct, see the FAQ at
   https://www.contributor-covenant.org/faq. Translations are available at
   https://www.contributor-covenant.org/translations.
-  `
-};
+  
 
 
-const generateLicences = licenseInfo => {
-  if (!licenseInfo) {
-    return '';
-  }
-
-  let LicenseMarkdown = ['## License']
-  licenseInfo.forEach(license => {
-    if (license == 'MIT') {
-      LicenseMarkdown.push("[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)")
-    }
-    if (license == 'Apache 2.0') {
-      LicenseMarkdown.push("[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)")
-    }
-    if (license == 'ISC') {
-      LicenseMarkdown.push("[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)")
-    }
-    if (license == 'Mozilla Public license') {
-      LicenseMarkdown.push("[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)")
-    }
-    if (license == 'IBM Public license') {
-      LicenseMarkdown.push("[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)")
-    }
-    if (license == 'Artistic license 2.0') {
-      LicenseMarkdown.push("[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)")
-    }
-
-  });
-  let txt = ''
-  LicenseMarkdown.forEach(element => {
-    txt = txt + element + '\n'
-  });
-  return txt;
-
-}
-
-
-
-
-// function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.Title}
-
-## Description
-
-${data.Description}
-
-${generateTblofContents(data.confirmTblofContents)}
-
-${generateInstall(data.Installation)}
-
-${generateUsage(data.Usage)}
-
-${generateCredits(data.Credits)}
-
-${generateLicences(data.Licenses)}
-
-
-${generateBadges(data.confirmBadges)}
-
-
-${populateContributing(data.confirmContributing)}
-
-
-`;
-}
-
-module.exports = generateMarkdown;
