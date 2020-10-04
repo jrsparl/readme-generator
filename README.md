@@ -1,3 +1,26 @@
-# Professional README Generator Starter Code
+# ReadMe Generator
 
-[How to create a Professional README](./readme-guide.md)
+## Description
+
+This node.js application will build a professional readMe file using data input from the command prompt
+  
+  ## Installation
+
+    Clone the repository
+
+
+  ## Usage
+
+  run node index to start and fill out accordingly
+
+
+  ## Credits
+
+  Demonstration
+
+
+## Badges
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+
+
+<a href="https://drive.google.com/file/d/1wmU4MUddER9fIsNZzLTYpPxXo71wpB-B/view">Link to demo video</a>
